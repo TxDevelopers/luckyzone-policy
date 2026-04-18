@@ -4,143 +4,203 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lucky Zone Policies</title>
+<title>Lucky Zone - Legal Center</title>
 
 <style>
-:root {
-    --bg: #f8fafc;
-    --card: white;
-    --text: #0f172a;
-    --muted: #64748b;
-    --primary: #2563eb;
+body{
+    margin:0;
+    font-family:Arial;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
 }
 
-body.dark {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --text: #f1f5f9;
-    --muted: #94a3b8;
-    --primary: #3b82f6;
+/* ===== NEON BACKGROUND ORBS ===== */
+.orb{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.6;
+    animation:float 8s infinite alternate ease-in-out;
+    z-index:-1;
 }
 
-body {
-    margin: 0;
-    font-family: Arial;
-    background: var(--bg);
-    color: var(--text);
-    transition: 0.3s;
-    animation: pageLoad 0.6s ease;
+.orb1{background:#3b82f6; top:-50px; left:-50px;}
+.orb2{background:#8b5cf6; bottom:-80px; right:-80px; animation-delay:2s;}
+.orb3{background:#22d3ee; top:40%; left:60%; animation-delay:4s;}
+
+@keyframes float{
+    from{transform:translateY(0px) scale(1);}
+    to{transform:translateY(80px) scale(1.2);}
 }
 
-@keyframes pageLoad {
-    from {opacity: 0; transform: scale(0.98);}
-    to {opacity: 1; transform: scale(1);}
+/* ===== HEADER ===== */
+.header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(90deg,#0f172a,#1e3a8a,#0ea5e9);
+    box-shadow:0 0 40px rgba(59,130,246,0.4);
+    position:relative;
+    overflow:hidden;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    background: var(--card);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+.header h1{
+    font-size:32px;
+    margin:0;
+    text-shadow:0 0 20px #38bdf8;
+    animation:pulse 3s infinite;
 }
 
-.logo {
-    font-weight: bold;
+@keyframes pulse{
+    0%{text-shadow:0 0 10px #38bdf8;}
+    50%{text-shadow:0 0 30px #38bdf8;}
+    100%{text-shadow:0 0 10px #38bdf8;}
 }
 
-.container {
-    max-width: 600px;
-    margin: 80px auto;
-    text-align: center;
+/* ===== STAR EFFECT ===== */
+.star{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    opacity:0.7;
+    animation:twinkle 3s infinite;
 }
 
-.card {
-    background: var(--card);
-    padding: 25px;
-    margin: 20px 0;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    line-height: 1.7;
-    font-size: 14.5px;
+@keyframes twinkle{
+    0%,100%{opacity:0.2; transform:scale(1);}
+    50%{opacity:1; transform:scale(1.8);}
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+/* ===== CONTAINER ===== */
+.container{
+    max-width:650px;
+    margin:auto;
+    padding:30px;
 }
 
-a {
-    display: block;
-    margin: 10px 0;
-    padding: 14px;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: 0.3s;
+/* ===== GLASS CARD ===== */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:18px;
+    margin:25px 0;
+    box-shadow:0 0 30px rgba(59,130,246,0.15);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.7s ease;
 }
 
-a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+.card.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-.toggle {
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: var(--primary);
-    color: white;
-    border: none;
+/* ===== LINKS ===== */
+a{
+    display:block;
+    margin:12px 0;
+    padding:14px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+    border-radius:12px;
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
 }
+
+/* hover glow */
+a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(59,130,246,0.6);
+}
+
+/* hover sparkle */
+a::after{
+    content:"";
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:white;
+    top:50%;
+    left:50%;
+    opacity:0;
+    border-radius:50%;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+a:hover::after{
+    animation:spark 0.6s ease-out;
+}
+
+@keyframes spark{
+    0%{opacity:1; transform:translate(-50%,-50%) scale(0);}
+    100%{opacity:0; transform:translate(-50%,-50%) scale(6);}
+}
+
+/* ===== BUTTON ===== */
+.toggle{
+    padding:10px 16px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#0ea5e9,#8b5cf6);
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(139,92,246,0.4);
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- glowing background -->
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
 <div class="header">
-    <div class="logo">Lucky Zone</div>
-    <button class="toggle" onclick="toggleMode()">Dark Mode</button>
+    <h1>Lucky Zone Legal Center</h1>
+    <p style="opacity:0.8;">Secure Policies & Terms</p>
+
+    <!-- random stars -->
+    <div class="star" style="top:20px;left:30px;"></div>
+    <div class="star" style="top:60px;left:80px;"></div>
+    <div class="star" style="top:40px;right:60px;"></div>
 </div>
 
 <div class="container">
 
-    <div class="card">
-        <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">
-            Official Legal Center
-        </div>
+<div class="card">
+    <h2>Legal Documents</h2>
+    <p style="opacity:0.7;">Official policies for Lucky Zone app</p>
 
-        <h2>Legal Documents</h2>
-        <p style="color: var(--muted);">Privacy Policy and Terms of Service</p>
-
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-    </div>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+</div>
 
 </div>
 
 <script>
-function toggleMode() {
-    document.body.classList.toggle("dark");
+const cards=document.querySelectorAll(".card");
+
+function show(){
+cards.forEach(c=>{
+if(c.getBoundingClientRect().top<window.innerHeight-80){
+c.classList.add("show");
+}
+});
 }
 
-const cards = document.querySelectorAll(".card");
-
-function showCards() {
-    cards.forEach(c => {
-        if(c.getBoundingClientRect().top < window.innerHeight - 100) {
-            c.classList.add("show");
-        }
-    });
-}
-
-window.addEventListener("scroll", showCards);
-showCards();
+window.addEventListener("scroll",show);
+show();
 </script>
 
 </body>
