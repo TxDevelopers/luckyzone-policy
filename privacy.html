@@ -1,118 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Privacy Policy</title>
+<div>
+<h2>Privacy Policy</h2>
 
-<style>
-:root {
-    --bg: #f8fafc;
-    --card: white;
-    --text: #0f172a;
-    --muted: #64748b;
-}
+<p><b>Effective Date:</b> April 2026</p>
 
-body.dark {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --text: #f1f5f9;
-    --muted: #94a3b8;
-}
+<h3>1. Introduction</h3>
+<p>
+Lucky Zone (“we”, “our”, or “us”) respects your privacy and is committed to protecting the personal information you may provide while using our application.
+This Privacy Policy explains how we collect, use, store, and protect your information.
+By using Lucky Zone, you agree to the practices described in this policy.
+</p>
 
-body {
-    margin: 0;
-    font-family: Arial;
-    background: var(--bg);
-    color: var(--text);
-}
+<h3>2. Information We Collect</h3>
+<p>
+We collect only the minimum information required to operate the application effectively:
+</p>
+<ul>
+<li>Phone number (for account creation and login authentication)</li>
+<li>Basic device information (such as device model and operating system for performance purposes)</li>
+</ul>
 
-.header {
-    padding: 40px;
-    text-align: center;
-    background: linear-gradient(90deg, #2563eb, #1e3a8a);
-    color: white;
-}
+<p>
+We do NOT collect sensitive personal data such as financial information, contacts, or location tracking.
+</p>
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
+<h3>3. How We Use Information</h3>
+<p>
+Collected data is used strictly for the following purposes:
+</p>
+<ul>
+<li>Creating and managing user accounts</li>
+<li>Authenticating users during login</li>
+<li>Improving app performance and stability</li>
+<li>Preventing unauthorized access or misuse</li>
+</ul>
 
-.card {
-    background: var(--card);
-    margin: 20px 0;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+<h3>4. Data Storage and Security</h3>
+<p>
+Your information is securely stored using Firebase services.
+We apply reasonable technical and organizational measures to protect data against unauthorized access, loss, or misuse.
+However, no method of electronic storage is 100% secure, and we cannot guarantee absolute security.
+</p>
 
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s;
-}
+<h3>5. Data Sharing</h3>
+<p>
+We do not sell, trade, or rent your personal information to third parties.
+We may only share data if required by law or to protect the safety and integrity of our service.
+</p>
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+<h3>6. Third-Party Services</h3>
+<p>
+Lucky Zone may use third-party services such as Firebase for authentication and data storage.
+These services operate under their own privacy policies.
+</p>
 
-h2 {
-    border-left: 4px solid #2563eb;
-    padding-left: 10px;
-}
-</style>
-</head>
+<h3>7. User Rights</h3>
+<p>
+You have the right to:
+</p>
+<ul>
+<li>Access your personal data</li>
+<li>Request correction or deletion of your data</li>
+<li>Withdraw consent by discontinuing use of the app</li>
+</ul>
 
-<body>
+<h3>8. Children's Privacy</h3>
+<p>
+Our application is not intended for children under the age of 13. We do not knowingly collect data from children.
+</p>
 
-<div class="header">
-    <h1>Privacy Policy</h1>
-    <p>Last updated: 2026</p>
+<h3>9. Changes to This Policy</h3>
+<p>
+We may update this Privacy Policy from time to time. Users are advised to review it periodically.
+</p>
+
+<h3>10. Contact Us</h3>
+<p>
+If you have any questions about this Privacy Policy, contact us at:<br>
+<b>txdevelopers@gmail.com</b>
+</p>
 </div>
-
-<div class="container">
-
-<div class="card">
-<h2>Overview</h2>
-<p>Lucky Zone respects your privacy and protects your personal data.</p>
-</div>
-
-<div class="card">
-<h2>Data Collection</h2>
-<p>We only collect phone numbers for authentication purposes.</p>
-</div>
-
-<div class="card">
-<h2>Usage</h2>
-<p>Your data is used only for login and account management.</p>
-</div>
-
-<div class="card">
-<h2>Security</h2>
-<p>All data is stored securely using Firebase systems.</p>
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-<p>txdevelopers@gmail.com</p>
-</div>
-
-</div>
-
-<script>
-const cards = document.querySelectorAll(".card");
-
-function animate() {
-    cards.forEach(c => {
-        if(c.getBoundingClientRect().top < window.innerHeight - 100) {
-            c.classList.add("show");
-        }
-    });
-}
-
-window.addEventListener("scroll", animate);
-animate();
-</script>
-
-</body>
-</html>
