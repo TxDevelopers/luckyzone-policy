@@ -2,108 +2,104 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Terms of Service - Lucky Zone</title>
+<title>Terms of Service</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial;
-        background: #f1f5f9;
-        color: #0f172a;
-    }
+:root {
+    --bg: #f8fafc;
+    --card: white;
+    --text: #0f172a;
+}
 
-    .header {
-        background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-        color: white;
-        padding: 30px;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: Arial;
+    background: var(--bg);
+    color: var(--text);
+}
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-        padding: 20px;
-    }
+.header {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+    color: white;
+}
 
-    .card {
-        background: white;
-        margin: 20px 0;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        transition: 0.3s;
-        animation: fadeIn 0.8s ease;
-    }
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+.card {
+    background: white;
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 
-    h2 {
-        color: #1e3a8a;
-    }
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
 
-    p {
-        line-height: 1.6;
-        color: #334155;
-    }
-
-    @keyframes fadeIn {
-        from {opacity: 0; transform: translateY(20px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 </head>
 
 <body>
 
 <div class="header">
-    <h1>Terms of Service</h1>
-    <p>By using Lucky Zone, you agree to these terms</p>
+<h1>Terms of Service</h1>
+<p>By using Lucky Zone you agree to these terms</p>
 </div>
 
 <div class="container">
 
-    <div class="card">
-        <h2>Acceptance of Terms</h2>
-        <p>
-            By accessing or using Lucky Zone, you agree to follow these Terms of Service.
-            If you do not agree, you should stop using the app immediately.
-        </p>
-    </div>
+<div class="card">
+<h2>Usage Rules</h2>
+<p>Use the app responsibly and legally.</p>
+</div>
 
-    <div class="card">
-        <h2>User Responsibility</h2>
-        <p>
-            You are responsible for maintaining the security of your account.
-            Any activity under your account is considered your responsibility.
-        </p>
-    </div>
+<div class="card">
+<h2>Accounts</h2>
+<p>You are responsible for your account security.</p>
+</div>
 
-    <div class="card">
-        <h2>Proper Use</h2>
-        <p>
-            The app must be used in a lawful and respectful manner.
-            Any misuse, abuse, or harmful activity may result in account termination.
-        </p>
-    </div>
+<div class="card">
+<h2>Restrictions</h2>
+<p>Misuse of the app may result in termination.</p>
+</div>
 
-    <div class="card">
-        <h2>Service Changes</h2>
-        <p>
-            We reserve the right to update or modify the app at any time without prior notice.
-        </p>
-    </div>
+<div class="card">
+<h2>Changes</h2>
+<p>We may update terms anytime.</p>
+</div>
 
-    <div class="card">
-        <h2>Contact</h2>
-        <p>
-            For any questions regarding these terms:<br>
-            <b>txdevelopers@gmail.com</b>
-        </p>
-    </div>
+<div class="card">
+<h2>Contact</h2>
+<p>txdevelopers@gmail.com</p>
+</div>
 
 </div>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+function animate() {
+    cards.forEach(c => {
+        if(c.getBoundingClientRect().top < window.innerHeight - 100) {
+            c.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", animate);
+animate();
+</script>
 
 </body>
 </html>
