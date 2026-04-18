@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Privacy Policy</title>
 
 <style>
@@ -24,6 +26,12 @@ body {
     font-family: Arial;
     background: var(--bg);
     color: var(--text);
+    animation: pageLoad 0.6s ease;
+}
+
+@keyframes pageLoad {
+    from {opacity: 0; transform: scale(0.98);}
+    to {opacity: 1; transform: scale(1);}
 }
 
 .header {
@@ -45,10 +53,11 @@ body {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-
     opacity: 0;
     transform: translateY(30px);
     transition: 0.6s;
+    line-height: 1.7;
+    font-size: 14.5px;
 }
 
 .card.show {
@@ -56,9 +65,9 @@ body {
     transform: translateY(0);
 }
 
-h2 {
-    border-left: 4px solid #2563eb;
-    padding-left: 10px;
+body.dark .card {
+    background: #1e293b;
+    color: #f1f5f9;
 }
 </style>
 </head>
@@ -79,17 +88,17 @@ h2 {
 
 <div class="card">
 <h2>Data Collection</h2>
-<p>We only collect phone numbers for authentication purposes.</p>
+<p>We only collect phone numbers for authentication.</p>
 </div>
 
 <div class="card">
 <h2>Usage</h2>
-<p>Your data is used only for login and account management.</p>
+<p>Data is used for login and account management only.</p>
 </div>
 
 <div class="card">
 <h2>Security</h2>
-<p>All data is stored securely using Firebase systems.</p>
+<p>All data is securely stored using Firebase systems.</p>
 </div>
 
 <div class="card">
