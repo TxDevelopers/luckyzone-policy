@@ -4,110 +4,158 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Terms of Service</title>
+<title>Terms & Conditions - Lucky Zone</title>
 
 <style>
-:root {
-    --bg: #f8fafc;
-    --card: white;
-    --text: #0f172a;
+:root{
+    --bg:#0b1220;
+    --card:#111a2e;
+    --text:#e5e7eb;
+    --muted:#94a3b8;
+    --primary:#3b82f6;
 }
 
-body {
-    margin: 0;
-    font-family: Arial;
-    background: var(--bg);
-    color: var(--text);
-    animation: pageLoad 0.6s ease;
+body{
+    margin:0;
+    font-family:Arial;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
 }
 
-@keyframes pageLoad {
-    from {opacity: 0; transform: scale(0.98);}
-    to {opacity: 1; transform: scale(1);}
+/* glowing animated background */
+body::before{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle, #3b82f6, transparent);
+    top:-100px;
+    left:-100px;
+    filter:blur(120px);
+    animation:float 6s infinite alternate;
 }
 
-.header {
-    padding: 40px;
-    text-align: center;
-    background: linear-gradient(90deg, #1e3a8a, #2563eb);
-    color: white;
+@keyframes float{
+    from{transform:translateY(0px);}
+    to{transform:translateY(60px);}
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+/* header */
+.header{
+    padding:40px;
+    text-align:center;
+    background:linear-gradient(90deg,#1e3a8a,#3b82f6);
+    color:white;
+    box-shadow:0 0 30px rgba(59,130,246,0.5);
+    animation:glow 3s infinite alternate;
 }
 
-.card {
-    background: white;
-    margin: 20px 0;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s;
-    line-height: 1.7;
-    font-size: 14.5px;
+@keyframes glow{
+    from{box-shadow:0 0 10px rgba(59,130,246,0.3);}
+    to{box-shadow:0 0 30px rgba(59,130,246,0.8);}
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:20px;
 }
+
+.card{
+    background:var(--card);
+    margin:20px 0;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.7s ease;
+    border:1px solid rgba(59,130,246,0.2);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h2{
+    color:#60a5fa;
+    border-left:4px solid var(--primary);
+    padding-left:10px;
+}
+
+p{
+    line-height:1.7;
+    color:var(--text);
+}
+
+.highlight{
+    color:#38bdf8;
+    font-weight:bold;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="header">
-<h1>Terms of Service</h1>
-<p>By using Lucky Zone you agree to these terms</p>
+    <h1>Terms & Conditions</h1>
+    <p>Lucky Zone App - Legal Agreement</p>
 </div>
 
 <div class="container">
 
 <div class="card">
-<h2>Usage Rules</h2>
-<p>Use the app responsibly and legally.</p>
+<h2>1. Introduction</h2>
+<p>Welcome to <span class="highlight">Lucky Zone</span>, a secure mobile application developed for entertainment and web-based access features. By using this app, you agree to these Terms.</p>
 </div>
 
 <div class="card">
-<h2>Accounts</h2>
-<p>You are responsible for your account security.</p>
+<h2>2. Acceptance of Terms</h2>
+<p>By installing or using Lucky Zone, you confirm that you agree to all terms and are responsible for your use of the application.</p>
 </div>
 
 <div class="card">
-<h2>Restrictions</h2>
-<p>Misuse may result in termination.</p>
+<h2>3. App Description</h2>
+<p>Lucky Zone provides user login, authentication, and WebView-based content access in a simple interface.</p>
 </div>
 
 <div class="card">
-<h2>Changes</h2>
-<p>We may update terms anytime.</p>
+<h2>4. User Accounts</h2>
+<p>Users must provide a valid phone number for authentication. You are responsible for your account activity.</p>
 </div>
 
 <div class="card">
-<h2>Contact</h2>
-<p>txdevelopers@gmail.com</p>
+<h2>5. Prohibited Use</h2>
+<p>You may not misuse, hack, reverse engineer, or interfere with the application in any way.</p>
+</div>
+
+<div class="card">
+<h2>6. Service Changes</h2>
+<p>We may update, modify, or remove features at any time without notice.</p>
+</div>
+
+<div class="card">
+<h2>7. Contact</h2>
+<p>Email: txdevelopers@gmail.com</p>
 </div>
 
 </div>
 
 <script>
-const cards = document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
 
-function animate() {
-    cards.forEach(c => {
-        if(c.getBoundingClientRect().top < window.innerHeight - 100) {
-            c.classList.add("show");
-        }
-    });
+function show(){
+cards.forEach(c=>{
+if(c.getBoundingClientRect().top<window.innerHeight-80){
+c.classList.add("show");
 }
-
-window.addEventListener("scroll", animate);
-animate();
+});
+}
+window.addEventListener("scroll",show);
+show();
 </script>
 
 </body>
