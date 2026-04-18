@@ -4,70 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Privacy Policy</title>
+<title>Privacy Policy - Lucky Zone</title>
 
 <style>
-:root {
-    --bg: #f8fafc;
-    --card: white;
-    --text: #0f172a;
-    --muted: #64748b;
+:root{
+    --bg:#0b1220;
+    --card:#111a2e;
+    --text:#e5e7eb;
+    --muted:#94a3b8;
+    --primary:#3b82f6;
 }
 
-body.dark {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --text: #f1f5f9;
-    --muted: #94a3b8;
+body{
+    margin:0;
+    font-family:Arial;
+    background:var(--bg);
+    color:var(--text);
 }
 
-body {
-    margin: 0;
-    font-family: Arial;
-    background: var(--bg);
-    color: var(--text);
-    animation: pageLoad 0.6s ease;
+.header{
+    padding:40px;
+    text-align:center;
+    background:linear-gradient(90deg,#1e3a8a,#3b82f6);
+    color:white;
+    animation:glow 3s infinite alternate;
 }
 
-@keyframes pageLoad {
-    from {opacity: 0; transform: scale(0.98);}
-    to {opacity: 1; transform: scale(1);}
+@keyframes glow{
+    from{box-shadow:0 0 10px rgba(59,130,246,0.3);}
+    to{box-shadow:0 0 30px rgba(59,130,246,0.8);}
 }
 
-.header {
-    padding: 40px;
-    text-align: center;
-    background: linear-gradient(90deg, #2563eb, #1e3a8a);
-    color: white;
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:20px;
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+.card{
+    background:var(--card);
+    margin:20px 0;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(59,130,246,0.2);
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.7s;
 }
 
-.card {
-    background: var(--card);
-    margin: 20px 0;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s;
-    line-height: 1.7;
-    font-size: 14.5px;
+.card.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+h2{
+    color:#60a5fa;
+    border-left:4px solid #3b82f6;
+    padding-left:10px;
 }
 
-body.dark .card {
-    background: #1e293b;
-    color: #f1f5f9;
+p{
+    line-height:1.7;
+}
+
+.highlight{
+    color:#38bdf8;
 }
 </style>
 </head>
@@ -75,52 +76,56 @@ body.dark .card {
 <body>
 
 <div class="header">
-    <h1>Privacy Policy</h1>
-    <p>Last updated: 2026</p>
+<h1>Privacy Policy</h1>
+<p>Lucky Zone Data Protection</p>
 </div>
 
 <div class="container">
 
 <div class="card">
-<h2>Overview</h2>
-<p>Lucky Zone respects your privacy and protects your personal data.</p>
+<h2>1. Introduction</h2>
+<p>Lucky Zone respects your privacy and is committed to protecting your data.</p>
 </div>
 
 <div class="card">
-<h2>Data Collection</h2>
-<p>We only collect phone numbers for authentication.</p>
+<h2>2. Data We Collect</h2>
+<p>We collect only phone numbers for authentication and basic device information.</p>
 </div>
 
 <div class="card">
-<h2>Usage</h2>
-<p>Data is used for login and account management only.</p>
+<h2>3. How We Use Data</h2>
+<p>Data is used only for login, authentication, and app functionality.</p>
 </div>
 
 <div class="card">
-<h2>Security</h2>
-<p>All data is securely stored using Firebase systems.</p>
+<h2>4. Data Storage</h2>
+<p>All data is securely stored using Firebase cloud services.</p>
 </div>
 
 <div class="card">
-<h2>Contact</h2>
-<p>txdevelopers@gmail.com</p>
+<h2>5. Data Sharing</h2>
+<p>We do not sell or share your personal information with third parties.</p>
+</div>
+
+<div class="card">
+<h2>6. Contact</h2>
+<p>Email: txdevelopers@gmail.com</p>
 </div>
 
 </div>
 
 <script>
-const cards = document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
 
-function animate() {
-    cards.forEach(c => {
-        if(c.getBoundingClientRect().top < window.innerHeight - 100) {
-            c.classList.add("show");
-        }
-    });
+function anim(){
+cards.forEach(c=>{
+if(c.getBoundingClientRect().top<window.innerHeight-80){
+c.classList.add("show");
 }
-
-window.addEventListener("scroll", animate);
-animate();
+});
+}
+window.addEventListener("scroll",anim);
+anim();
 </script>
 
 </body>
