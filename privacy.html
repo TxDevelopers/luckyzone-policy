@@ -2,69 +2,64 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Privacy Policy - Lucky Zone</title>
+<title>Privacy Policy</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial;
-        background: #f1f5f9;
-        color: #0f172a;
-    }
+:root {
+    --bg: #f8fafc;
+    --card: white;
+    --text: #0f172a;
+    --muted: #64748b;
+}
 
-    .header {
-        background: linear-gradient(90deg, #3b82f6, #1e3a8a);
-        color: white;
-        padding: 30px;
-        text-align: center;
-        animation: fadeIn 1s ease;
-    }
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+}
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-        padding: 20px;
-    }
+body {
+    margin: 0;
+    font-family: Arial;
+    background: var(--bg);
+    color: var(--text);
+}
 
-    .card {
-        background: white;
-        margin: 20px 0;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        animation: slideUp 0.8s ease;
-        transition: 0.3s;
-    }
+.header {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(90deg, #2563eb, #1e3a8a);
+    color: white;
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
 
-    h2 {
-        color: #1e3a8a;
-    }
+.card {
+    background: var(--card);
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 
-    p {
-        line-height: 1.6;
-        color: #334155;
-    }
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
 
-    .highlight {
-        background: #dbeafe;
-        padding: 10px;
-        border-left: 4px solid #3b82f6;
-        border-radius: 6px;
-    }
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    @keyframes fadeIn {
-        from {opacity: 0;}
-        to {opacity: 1;}
-    }
-
-    @keyframes slideUp {
-        from {opacity: 0; transform: translateY(20px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
+h2 {
+    border-left: 4px solid #2563eb;
+    padding-left: 10px;
+}
 </style>
 </head>
 
@@ -72,52 +67,52 @@
 
 <div class="header">
     <h1>Privacy Policy</h1>
-    <p>Last updated: April 2026</p>
+    <p>Last updated: 2026</p>
 </div>
 
 <div class="container">
 
-    <div class="card">
-        <h2>Overview</h2>
-        <p>
-            Lucky Zone respects your privacy and is committed to protecting any personal information you share.
-            This Privacy Policy explains how we collect, use, and safeguard your data when using our application.
-        </p>
-    </div>
+<div class="card">
+<h2>Overview</h2>
+<p>Lucky Zone respects your privacy and protects your personal data.</p>
+</div>
 
-    <div class="card">
-        <h2>Information We Collect</h2>
-        <p>
-            We only collect essential information such as your phone number during account creation.
-            No unnecessary personal data is requested.
-        </p>
-    </div>
+<div class="card">
+<h2>Data Collection</h2>
+<p>We only collect phone numbers for authentication purposes.</p>
+</div>
 
-    <div class="card highlight">
-        <h2>How We Use Data</h2>
-        <p>
-            Your phone number is used strictly for authentication and account access.
-            We do not sell, share, or misuse your information in any way.
-        </p>
-    </div>
+<div class="card">
+<h2>Usage</h2>
+<p>Your data is used only for login and account management.</p>
+</div>
 
-    <div class="card">
-        <h2>Data Security</h2>
-        <p>
-            All data is stored securely using Firebase authentication systems.
-            We take reasonable steps to protect against unauthorized access.
-        </p>
-    </div>
+<div class="card">
+<h2>Security</h2>
+<p>All data is stored securely using Firebase systems.</p>
+</div>
 
-    <div class="card">
-        <h2>Contact</h2>
-        <p>
-            If you have any questions, contact us at:<br>
-            <b>txdevelopers@gmail.com</b>
-        </p>
-    </div>
+<div class="card">
+<h2>Contact</h2>
+<p>txdevelopers@gmail.com</p>
+</div>
 
 </div>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+function animate() {
+    cards.forEach(c => {
+        if(c.getBoundingClientRect().top < window.innerHeight - 100) {
+            c.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", animate);
+animate();
+</script>
 
 </body>
 </html>
