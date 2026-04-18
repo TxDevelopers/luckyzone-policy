@@ -7,32 +7,17 @@
 <title>Privacy Policy - Lucky Zone</title>
 
 <style>
-:root{
-    --bg:#0b1220;
-    --card:#111a2e;
-    --text:#e5e7eb;
-    --muted:#94a3b8;
-    --primary:#3b82f6;
-}
-
 body{
     margin:0;
     font-family:Arial;
-    background:var(--bg);
-    color:var(--text);
+    background:#0b1220;
+    color:#e5e7eb;
 }
 
 .header{
     padding:40px;
     text-align:center;
     background:linear-gradient(90deg,#1e3a8a,#3b82f6);
-    color:white;
-    animation:glow 3s infinite alternate;
-}
-
-@keyframes glow{
-    from{box-shadow:0 0 10px rgba(59,130,246,0.3);}
-    to{box-shadow:0 0 30px rgba(59,130,246,0.8);}
 }
 
 .container{
@@ -42,19 +27,11 @@ body{
 }
 
 .card{
-    background:var(--card);
+    background:#111a2e;
     margin:20px 0;
     padding:25px;
     border-radius:15px;
     border:1px solid rgba(59,130,246,0.2);
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.7s;
-}
-
-.card.show{
-    opacity:1;
-    transform:translateY(0);
 }
 
 h2{
@@ -67,9 +44,6 @@ p{
     line-height:1.7;
 }
 
-.highlight{
-    color:#38bdf8;
-}
 </style>
 </head>
 
@@ -83,50 +57,31 @@ p{
 <div class="container">
 
 <div class="card">
-<h2>1. Introduction</h2>
-<p>Lucky Zone respects your privacy and is committed to protecting your data.</p>
+<h2>Introduction</h2>
+<p>Lucky Zone respects your privacy and protects your personal data.</p>
 </div>
 
 <div class="card">
-<h2>2. Data We Collect</h2>
-<p>We collect only phone numbers for authentication and basic device information.</p>
+<h2>Data Collection</h2>
+<p>We collect only phone numbers for authentication.</p>
 </div>
 
 <div class="card">
-<h2>3. How We Use Data</h2>
-<p>Data is used only for login, authentication, and app functionality.</p>
+<h2>Usage</h2>
+<p>Data is used only for login and app functionality.</p>
 </div>
 
 <div class="card">
-<h2>4. Data Storage</h2>
-<p>All data is securely stored using Firebase cloud services.</p>
+<h2>Security</h2>
+<p>Data is securely stored using Firebase services.</p>
 </div>
 
 <div class="card">
-<h2>5. Data Sharing</h2>
-<p>We do not sell or share your personal information with third parties.</p>
-</div>
-
-<div class="card">
-<h2>6. Contact</h2>
-<p>Email: txdevelopers@gmail.com</p>
+<h2>Contact</h2>
+<p>Email: txdevelopersofficial@gmail.com</p>
 </div>
 
 </div>
-
-<script>
-const cards=document.querySelectorAll(".card");
-
-function anim(){
-cards.forEach(c=>{
-if(c.getBoundingClientRect().top<window.innerHeight-80){
-c.classList.add("show");
-}
-});
-}
-window.addEventListener("scroll",anim);
-anim();
-</script>
 
 </body>
 </html>
