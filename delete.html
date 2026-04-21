@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account - Lucky Zone</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#050816;
+    color:white;
+    text-align:center;
+}
+
+/* glow background */
+.orb{
+    position:fixed;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:0.5;
+    animation:float 6s infinite alternate;
+    z-index:-1;
+}
+.orb1{background:#ef4444; top:-40px; left:-40px;}
+.orb2{background:#f97316; bottom:-60px; right:-60px;}
+
+@keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(60px);}
+}
+
+.container{
+    max-width:500px;
+    margin:80px auto;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 0 25px rgba(239,68,68,0.2);
+}
+
+/* button */
+a{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 22px;
+    background:linear-gradient(90deg,#ef4444,#f97316);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+a:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #ef4444;
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<div class="container">
+<h2>Request Account Deletion</h2>
+
+<p>If you would like to delete your account and all associated data, please contact us using the email below.</p>
+
+<p><b>Email:</b> txdevelopersofficial@gmail.com</p>
+
+<p>Include your registered phone number in the email. Your request will be processed within 48 hours.</p>
+
+<a href="mailto:txdevelopersofficial@gmail.com">Send Deletion Request</a>
+</div>
+
+</body>
+</html>
